@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
+			"name": "kokoa-clone-2021",
 			"path": "..\\kokoa-clone-2021"
 		},
 		{
-			"path": "..\\codeup-algorithm-drill"
+			"name": "vanilla-javascrpt",
+			"path": "..\\vanilla-javascrpt"
 		},
 		{
-			"path": "..\\vanilla-javascrpt"
+			"name": "codeup-algorithm-drill",
+			"path": "..\\codeup-algorithm-drill"
 		}
 	],
 	"settings": {}
