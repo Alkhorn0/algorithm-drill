@@ -1,8 +1,3 @@
-str1 = input()
-str2 = input()
-m = len(str1)
-n = len(str2)
-
 def BruteForce(str1, str2):
     i = 0
     j = 0
@@ -15,5 +10,12 @@ def BruteForce(str1, str2):
     if j == m: return 1
     else: return 0
 
-print(BruteForce(str1, str2))
+T = int(input())
+for t in range(1, T+1):
+    str1 = input()
+    str2 = input()
+    m = len(str1)
+    n = len(str2)
+
+    print(f'#{t} {BruteForce(str1, str2)}')
             
