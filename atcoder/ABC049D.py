@@ -1,36 +1,46 @@
+from collections import deque, defaultdict
+
 n, k, l = map(int, input().split())
-cities = [1 for _ in range(n)]
-road = []
-train = []
+road = [[] for _ in range(n)]
+train = [[] for _ in range(n)]
+connect_road = [0] * n
+connect_train = [0] * n
 for _ in range(k):
-    road.append(list(map(int, input().split())))
+    p, q = map(int, input().split())
+    road[p-1].append(q-1)
+    road[q-1].append(p-1)
 for _ in range(l):
-    train.append(list(map(int, input().split())))
+    r, s = map(int, input().split())
+    train[r-1].append(s-1)
+    train[s-1].append(r-1)
+
+print(road)
+print(train)
+
+def bfs(start, now, graph, connect):
+    q = deque([start])
+    connect[start] = now
+    while q:
+        v = q.popleft()
+        for i in graph[v]:
+            if not connect[i]:
+                connect[i] = now
+                q.append(i)
+
+now1, now2 = 0, 0
 for i in range(n):
-    city_number = i+1
-    road_connect_list = []
-    connect = city_number
-    for j in range(k):
-        if connect == road[j][0]:
-            connect = road[j][1]
-            road_connect_list.append(connect)
-        elif connect == road[j][1]:
-            connect = road[j][0]
-            road_connect_list.append(connect)
-        else:
-            continue
-    train_connect_list = []
-    connect = city_number
-    for h in range(l):
-        if connect == road[h][0]:
-            connect = road[h][1]
-            train_connect_list.append(connect)
-        elif connect == road[h][1]:
-            connect = road[h][0]
-            train_connect_list.append(connect)
-    for o in train_connect_list:
-        if o in road_connect_list:
-            cities[i] += 1
-    print(city_number, road_connect_list, train_connect_list)
-for i in range(n):
-    print(cities[i],end=' ')
+    if not road[i]:
+        now1 += 1
+        bfs(i, now1, road, connect_road)
+    
+    if not train[i]:
+        now2 += 1
+        bfs(i, now2, train, connect_train)
+d = defaultdict(int)
+for d1,d2 in zip(connect_road, connect_train):
+    d[(d1, d2)] += 1
+print(connect_road)
+print(connect_train)
+print(d)
+for d1, d2 in zip(connect_road, connect_train):
+    print(d[(d1,d2)])
