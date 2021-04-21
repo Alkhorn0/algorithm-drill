@@ -13,7 +13,6 @@ def cal_sum(y):
         if not visited[x]:
             visited[x] = True
             sub_sum += array[y][x]
-            print(array[y][x])
             cal_sum(y+1)
             visited[x] = False
             sub_sum -= array[y][x]
