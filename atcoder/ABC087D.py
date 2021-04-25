@@ -1,18 +1,29 @@
+from collections import deque
+
 n, m = map(int, input().split())
-info = {}
-visited = [0 for _ in range(n+1)]
-for i in range(1, n+1):
-    info[i] = 0
-judge = False
-for _ in range(m):
+graph = [[] for _ in range(n+1)]
+for i in range(m):
     l, r, d = map(int, input().split())
-    visited[l] = 1
-    if visited[r] == 1 and info[r] != info[l]+d:
-        judge = True
-    else:    
-        info[r] = info[l]+d
-        visited[r] = 1
-if judge:
-    print('No')
-else:
-    print('Yes')
+    graph[l].append([r, d])
+    graph[r].append([l, -d])
+
+point = [None] * (n+1)
+
+for i in range(1, n+1):
+    if point[i] != None:
+        continue
+    point[i] = 0
+    d = deque()
+    d.append(i)
+    while d:
+        start = d.popleft()
+        for end, distance in graph[start]:
+            if point[end] != None:
+                if point[end] != point[start] + distance:
+                    print('No')
+                    exit()
+                continue
+            point[end] = point[start] + distance
+            d.append(end)
+print('Yes')
+

@@ -1,4 +1,4 @@
-# 다시보기
+# dfs 문제
 import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**5)
@@ -12,7 +12,7 @@ for t in range(T):
         field[y][x] = 0
 
     def dfs(x, y):
-        if x <= -1 or x >= m or y <= -1 or y >= m:
+        if x <= -1 or x >= m or y <= -1 or y >= n:
             return False
         if field[y][x] == 0:
             field[y][x] = 1
@@ -26,7 +26,6 @@ for t in range(T):
     result = 0
     for i in range(n):
         for j in range(m):
-            print(j, i)
             if dfs(j, i) == True:
                 result += 1
 
