@@ -26,3 +26,4 @@ for i in range(1, n+1):
             point[end] = point[start] + distance
             d.append(end)
 print('Yes')
+
