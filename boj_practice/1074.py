@@ -1,31 +1,24 @@
-# 다시풀기
-def z(n, arr):
+# 재귀 문제
+def z(n, r, c):
     global cnt
-    if n == 1:
-        for i in range(2**n):
-            for j in range(2**n):
-                arr[i][j] = cnt
-                cnt += 1
-                print(cnt)
+    if n == 0:
+        return cnt
     else:
-        n //= 2
-        arr_1, arr_2, arr_3, arr_4 = [], [], [], []
-        for i in range(2**n):
-            arr_1.append(arr[i][:2**n])
-            arr_2.append(arr[i][2**n:])
-            arr_3.append(arr[2**n+i][:2**n])
-            arr_4.append(arr[2**n+i][2**n:])
-        z(n, arr_1)
-        print(arr_1)
-        z(n, arr_2)
-        print(arr_2)
-        z(n, arr_3)
-        print(arr_3)
-        z(n, arr_4)
-        print(arr_4)
+        if r < 2**(n-1) and c < 2**(n-1):
+            cnt += 0
+            z(n-1, r%(2**(n-1)), c%(2**(n-1)))
+        elif r < 2**(n-1) and c >= 2**(n-1):
+            cnt += 4**(n-1)
+            z(n-1, r%(2**(n-1)), c%(2**(n-1)))
+        elif r >= 2**(n-1) and c < 2**(n-1):
+            cnt += 2*(4**(n-1))
+            z(n-1, r%(2**(n-1)), c%(2**(n-1)))
+        else:
+            cnt += 3*(4**(n-1))
+            z(n-1, r%(2**(n-1)), c%(2**(n-1)))
+
 
 n, r, c = map(int, input().split())
-arr = [[0 for _ in range(2**n)] for _ in range(2**n)]
 cnt = 0
-z(n, arr)
-print(arr)
+z(n, r, c)
+print(cnt)
