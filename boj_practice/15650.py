@@ -1,4 +1,4 @@
-# 백트래킹 
+# 백트래킹, 조합 
 # 다시보기
 n, m = map(int, input().split())
 check = [False]*(n+1)
