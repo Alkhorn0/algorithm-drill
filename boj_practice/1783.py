@@ -1,9 +1,12 @@
-# 케이스 잘 나눠서 보기 (구현)
+# 구현
 n, m = map(int, input().split())
-if n < 2 or m < 2:
+if n == 1:
     print(1)
-elif n:
-    print(1 + m//2)
+elif n == 2:
+    print(min(4, (m + 1) // 2))
 else:
-    print(4 + m-6)
+    if m <= 6:
+        print(min(4, m))
+    else:
+        print(m - 2)
     
