@@ -1,11 +1,9 @@
-from itertools import combinations
-
+# dp문제 
 n, a = map(int, input().split())
-cards = list(map(int, input().split()))
-answer = 0
-for i in range(1, n+1):
-    possible = list(combinations(cards, i))
-    for j in range(len(possible)):
-        if sum(possible[j]) == a*i:
-            answer += 1
-print(answer)
+x = list(map(int, input().split()))
+x = [i - a for i in x]
+dic = {0:1}
+for i in x:
+    for j, k in list(dic.items()):
+        dic[i+j] = dic.get(i+j, 0) + k
+print(dic[0] - 1)
