@@ -1,3 +1,4 @@
+# 다이나믹 프로그래밍
 n = int(input())
 d = [[0, 0, 0] for _ in range(n+1)]
 for i in range(1, n+1):
