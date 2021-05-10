@@ -1,7 +1,5 @@
 n, a, b = map(int, input().split())
 l = []
-
-
 for i in range(1, n+1):
     i = str(i)
     k = 0
@@ -11,7 +9,5 @@ for i in range(1, n+1):
     if a <= k <= b:
         i = int(i)
         l.append(i)
-
 s = sum(l)
-
 print(s)
