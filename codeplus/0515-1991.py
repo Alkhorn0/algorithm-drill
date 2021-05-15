@@ -1,5 +1,6 @@
 # 트리 만드는 법에 대해 숙지할것 (다시보기)
 # 프리오더, 인오더, 포스트오더의 차이점 숙지
+# 트리
 class Node:
     def __init__(self, left, right):
         self.left = left

@@ -1,4 +1,5 @@
 # 다시 보기 
+# 트리
 import sys
 class node:
     def __init__(self):

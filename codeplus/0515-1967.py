@@ -1,4 +1,4 @@
-# 1167번과 같이 볼 것
+# 1167번과 같이 볼 것, 트리
 from collections import deque
 import sys
 input = sys.stdin.readline
