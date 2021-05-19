@@ -1,3 +1,4 @@
+# brute force, recursive
 def solve(a, index, save, plus, minus, mul, div):
     global ans
     if index == n:

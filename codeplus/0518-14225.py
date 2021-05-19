@@ -1,3 +1,4 @@
+# brute force, recursive
 def solve(index, num):
     if index == n:
         h[num] = 1
