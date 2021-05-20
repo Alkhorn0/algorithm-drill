@@ -1,3 +1,4 @@
+# burte force, bitmask
 n = int(input())
 s = [list(map(int, input().split())) for _ in range(n)]
 ans = -1
