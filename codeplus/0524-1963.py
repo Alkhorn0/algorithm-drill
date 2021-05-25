@@ -9,7 +9,8 @@ for i in range(2, 10001):
             prime[j] = False
 # 숫자 변환
 def change(num, index, digit):
-    # index = 0 , digit = 0는 초기값 의미
+    # index = 0 , digit = 0 은 1000의 자리수를 
+    # 0으로 만드는 것이므로 문제 규칙에 위배
     if index == 0 and digit == 0:
         return -1
     s = list(str(num))
