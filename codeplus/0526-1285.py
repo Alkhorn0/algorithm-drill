@@ -16,6 +16,7 @@ for k in range(1<<n):
         cnt = 0
         for j in range(n):
     # k = 0-> 행을 뒤집지 않음, 1<<j = 0 -> i행의 j열을 뒤집지 않음
+            # k&(1<<j) -> a[i][j]가 뒤집혀있는가 -> 1=yes,0=no
             if k & (1<<j):
                 if a[i][j] == 'H':
                     cnt += 1

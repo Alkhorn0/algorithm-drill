@@ -17,7 +17,9 @@ def merge(a, b):
             ans[cnt] = b[j]
             j += 1
         cnt += 1
-    
+    # 위의 시행에서 a혹은 b의 원소가 먼저 전부 배치되면 동작
+    # 즉, 아래 두개의 while문 중 동작하는 것은 1개뿐
+    # a혹은 b에 남아 있는 원소 전부 ans로 대입
     while i < n:
         ans[cnt] = a[i]
         i += 1

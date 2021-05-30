@@ -18,6 +18,7 @@ for i in a:
     if d[-1] < i:
         d.append(i)
     else:
-        # i보다 작은 d의 요소의 인덱스를 반환 -> bisect_left
+        # i보다 작거나 같은 d의 요소중 가장 큰 수의 인덱스를 반환 -> bisect_left
         d[bisect_left(d, i)] = i
 print(len(d)-1)
+
