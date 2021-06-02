@@ -39,10 +39,7 @@ while left <= right:
     if check(mid) <= m:
         right = mid - 1
         ans = min(ans, mid)
-        print('r')
-    
     else:
         left = mid + 1
-        print('l')
 print(ans)
 
