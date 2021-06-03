@@ -1,5 +1,5 @@
 # 시간초과
-# 다시 보기
+# 다시 보기 d
 from collections import deque
 import sys
 input = sys.stdin.readline
