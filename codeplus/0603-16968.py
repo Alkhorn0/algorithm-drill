@@ -1,3 +1,5 @@
+# brute force, combination
+
 a = list(input())
 s = ''
 ans = 1
