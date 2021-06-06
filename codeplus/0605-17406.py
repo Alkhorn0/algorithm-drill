@@ -30,25 +30,25 @@ def go(b, t):
         for r in range(row-s, row+s):
             group.append(b[r][col+s])
         for c in range(col+s, col-s, -1):
-            group.append(a[row+s][c])
+            group.append(b[row+s][c])
         for r in range(row+s, row-s, -1):
-            group.append(a[r][col-s])
+            group.append(b[r][col-s])
         groups.append(group)
     for s in range(1, size+1):
-        group = group[s-1]
+        group = groups[s-1]
         group = group[-1:] + group[:-1]
         index = 0
         for c in range(col-s, col+s):
-            a[row-s][c] = group[index]
+            b[row-s][c] = group[index]
             index += 1
         for r in range(row-s, row+s):
-            a[r][col+s] = group[index]
+            b[r][col+s] = group[index]
             index += 1
         for c in range(col+s, col-s, -1):
-            a[row+s][c] = group[index]
+            b[row+s][c] = group[index]
             index += 1
         for r in range(row+s, row-s, -1):
-            a[r][col-s] = group[index]
+            b[r][col-s] = group[index]
             index += 1
 
 
