@@ -1,3 +1,4 @@
+# sw 역량 테스트 준비 - 기초
 def gcd(a, b):
     while a%b > 0:
         temp = a%b
