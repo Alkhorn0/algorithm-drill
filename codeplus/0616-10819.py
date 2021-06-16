@@ -1,4 +1,4 @@
-# sw 역량 테스트 준비 - 기초
+# sw 역량 테스트 준비 - 기초 
 def next_permutation(a):
     i = len(a)-1
     while i >= 0 and a[i] <= a[i-1]:
