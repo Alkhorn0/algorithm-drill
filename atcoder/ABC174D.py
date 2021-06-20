@@ -1,0 +1,5 @@
+n = int(input())
+c = input()
+r = c.count("R")
+ans = c[:r].count("W")
+print(ans)
