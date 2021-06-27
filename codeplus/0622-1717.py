@@ -29,6 +29,6 @@ for _ in range(m):
         x = find(op[1])
         y = find(op[2])
         if x == y:
-            sys.stdout.write('YES')
+            sys.stdout.write('YES\n')
         else:
-            sys.stdout.write('NO')
+            sys.stdout.write('NO\n')

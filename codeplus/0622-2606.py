@@ -25,5 +25,5 @@ ans = 0
 for j in range(2, n+1):
     if find(1) == find(j):
         ans += 1
-print(parent)
+
 print(ans)
