@@ -15,7 +15,6 @@ for _ in range(n):
     else:
         y_4 = min(y_4, y)
 
-ans = (x_2-x_1)*(y_4-y_3) 
 if x_2 <= x_1 or y_4 <= y_3:
     ans = 0
 else:

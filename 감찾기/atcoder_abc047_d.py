@@ -2,7 +2,7 @@ n, t = map(int, input().split())
 a = list(map(int, input().split()))
 income = {}
 m = max(a)
-#print(m)
+
 for i in a:
     if m > i:
         m = i
