@@ -1,16 +1,19 @@
-import heapq
-n, k = map(int, input().split())
-p = list(map(int, input().split()))
+from collections import defaultdict
+n, q = map(int, input().split())
+a = list(map(int, input().split()))
+d = defaultdict(list)
 
-que = p[0:k]
-print(min(que))
-heapq.heapify(que)
+for i in range(n):
+    d[a[i]].append(i+1)
 
-for i in range(k, n):
-    #print(que)
-    m = heapq.heappop(que)
-    m = max(m, p[i])
-    heapq.heappush(que, m)
-    ans = heapq.heappop(que)
-    print(ans)
-    heapq.heappush(que, ans)
+
+for _ in range(q):
+    x, k = map(int, input().split())
+    if d[x] == []:
+        print(-1)
+    else:
+        t = d[x]
+        if len(t) < k:
+            print(-1)
+        else:
+            print(t[k-1])
