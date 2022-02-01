@@ -1,19 +1,18 @@
-from collections import defaultdict
-n, q = map(int, input().split())
-a = list(map(int, input().split()))
-d = defaultdict(list)
+n, m = map(int, input().split())
+s = list(input().split())
+t = list(input().split())
+k = m-1
+cmp = t[k]
+ans = []
 
-for i in range(n):
-    d[a[i]].append(i+1)
-
-
-for _ in range(q):
-    x, k = map(int, input().split())
-    if d[x] == []:
-        print(-1)
+for i in range(n-1, -1, -1):
+    if cmp == s[i]:
+        ans.append('Yes')
+        k -= 1
+        cmp = t[k]
     else:
-        t = d[x]
-        if len(t) < k:
-            print(-1)
-        else:
-            print(t[k-1])
+        ans.append('No')
+
+ans = ans[::-1]
+for a in ans:
+    print(a)
