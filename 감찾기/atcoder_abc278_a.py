@@ -1,0 +1,7 @@
+n, k = map(int, input().split())
+a = list(map(int,input().split()))
+
+for _ in range(k):
+    a = a[1:]
+    a.append(0)
+print(*a)
